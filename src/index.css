@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+    --background-color-light: #fafbfd;
+    --background-color-dark: #21233d;
+    --text-color-light: black;
+    --text-color-dark: white;
+    --gradient-end-color-light: #F0F4FF;
+    --gradient-end-color-dark: #0F172A;
+    --navbar-bg-light: rgba(255, 255, 255, 0.5);
+    --navbar-bg-dark: rgba(31, 41, 55, 0.8);
+    --text-active: #1d4ed8;
+    --text-inactive-light: #4b5563;
+    --text-inactive-dark: #ffffff;
+    --button-bg-light: rgba(255, 255, 255, 0.8);
+    --button-bg-dark: rgba(31, 41, 55, 0.8);
+    --button-hover-bg-light: #374151;
+    --button-hover-bg-dark: #cbd5e1;
+    --button-hover-text-light: white;
+    --button-hover-text-dark: #1f2937;
+}
+
+/* Estilos del body */
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to bottom, var(--background-color-light) 0%, var(--gradient-end-color-light) 100%);
+    color: var(--text-color-light);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background: linear-gradient(to bottom, var(--background-color-dark) 0%, var(--gradient-end-color-dark) 100%);
+    color: var(--text-color-dark);
+}
+
+/* Estilos del Navbar */
+.navbar {
+    background-color: var(--navbar-bg-light);
+    transition: background-color 0.3s ease;
+}
+
+.dark .navbar {
+    background-color: var(--navbar-bg-dark);
+}
+
+/* Estilos de los enlaces del Navbar */
+.nav-link {
+    position: relative;
+    color: inherit;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-active);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.text-active {
+    color: var(--text-active);
+}
+
+.text-inactive {
+    color: var(--text-inactive-light);
+}
+
+.dark .text-inactive {
+    color: var(--text-inactive-dark);
+}
+
+/* Estilos de los Botones */
+.button {
+    background-color: var(--button-bg-light);
+    color: var(--text-inactive-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg-light);
+    color: var(--button-hover-text-light);
+}
+
+.dark .button {
+    background-color: var(--button-bg-dark);
+    color: var(--text-inactive-dark);
+}
+
+.dark .button:hover {
+    background-color: var(--button-hover-bg-dark);
+    color: var(--button-hover-text-dark);
+}
+
+/* Estilos de los Íconos */
+.text-icon {
+    color: var(--text-inactive-light);
+    transition: color 0.3s ease;
+}
+
+.dark .text-icon {
+    color: var(--text-inactive-dark);
+}
+
+.button .text-icon {
+    transition: color 0.3s ease;
+}
+
+.button:hover .text-icon {
+    color: var(--button-hover-text-light);
+}
+
+.dark .button:hover .text-icon {
+    color: var(--button-hover-text-dark);
+}
