@@ -44,7 +44,7 @@ function Home() {
             <img 
               src={myPhoto} 
               alt="David" 
-              className="max-w-xs h-auto rounded-full shadow-lg mx-auto" 
+              className="max-w-xs h-auto mx-auto" 
             />
           </div>
         </div>
